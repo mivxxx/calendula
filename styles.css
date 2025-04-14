@@ -39,6 +39,14 @@
   --calendula-input-placeholder: #999999;
 }
 
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
+}
+
 .calendula-date-time-picker {
   max-width: 550px;
   background-color: var(--calendula-bg-primary);
@@ -52,6 +60,10 @@
   z-index: 1000;
   display: none; /* Hidden by default */
   color: var(--calendula-text-primary);
+}
+
+.calendula-date-time-picker:has(.calendula-time-container.display-block) {
+  min-width: 550px;
 }
 
 .calendula-calendar-container {

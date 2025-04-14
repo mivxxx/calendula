@@ -338,7 +338,13 @@ class Calendula {
     // Manage time container visibility
     const timeContainer = this.datePickerElement.querySelector('.calendula-time-container');
     if (timeContainer) {
-      timeContainer.style.display = this.config.showTime ? 'block' : 'none';
+      if (this.config.showTime) {
+        timeContainer.classList.remove('display-none');
+        timeContainer.classList.add('display-block');
+      } else {
+        timeContainer.classList.remove('display-block');
+        timeContainer.classList.add('display-none');
+      }
     }
 
     // Manage seconds visibility
