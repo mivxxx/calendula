@@ -49,7 +49,8 @@ class Calendula {
       dateFormat: options.dateFormat || null, // Date format (for example, 'YYYY-MM-DD')
       language: options.language || this.detectBrowserLanguage(), // Interface language
       timezone: options.timezone || null, // Timezone for displaying dates (e.g., 'Europe/London', 'America/New_York')
-      allowEmpty: options.allowEmpty !== undefined ? options.allowEmpty : false // Allow empty input values
+      allowEmpty: options.allowEmpty !== undefined ? options.allowEmpty : false, // Allow empty input values
+      align: options.align || 'left' // Alignment of the date picker
     };
 
     // Internal state
@@ -1151,6 +1152,10 @@ class Calendula {
 
     // Fix behavior in Chrome - do not let set strange inset
     this.datePickerElement.style.inset = '';
+
+    // Align calendar
+    const alignProp = this.config.align === 'right' ? 'right' : 'left';
+    this.datePickerElement.style[alignProp] = '0';
 
     // Trigger a callback if defined
     if (typeof this.config.onOpen === 'function') {

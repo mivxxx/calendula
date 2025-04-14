@@ -137,7 +137,10 @@ const picker = new Calendula(document.getElementById('dateInput'), {
   
   // Initial date to display (default: current date)
   initialDate: new Date(),
-  
+
+  // Align the calendar with respect to the input field: left or right (default: left)
+  align: 'right',
+
   // Callback when date changes
   onChange: function(date) {
     console.log('Selected date:', date);
